@@ -20,6 +20,6 @@
 			<guid>{{ .Permalink }}</guid>
 			<description>{{ .Summary | html }}</description>
 		</item>
-		{{ end }}
+      	{{ end }}
 	</channel>
 </rss>
