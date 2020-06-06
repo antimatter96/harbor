@@ -8,6 +8,8 @@ Simple and minimal personal blog theme for [Hugo](https://gohugo.io/).
 
 ![screenshot-dark](https://user-images.githubusercontent.com/16238709/77252745-529c6a00-6c99-11ea-95f6-2df83dfff35e.png)
 
+[Here](https://themes.gohugo.io/theme/harbor/) is the demo link.
+
 ## Features
 
 - Support tags and categories and archives
@@ -17,6 +19,7 @@ Simple and minimal personal blog theme for [Hugo](https://gohugo.io/).
 - Syntax Highlight (see [Hugo doc](https://gohugo.io/content-management/syntax-highlighting/))
 - Search entire blog posts
 - Table Of Contents
+- Disqus
 
 ## Installation & Update
 
@@ -39,7 +42,7 @@ When you manually create files by following [quick start (step4)](https://gohugo
 #### `config.toml` example
 
 ```toml
-themes = "harbor"
+theme = "harbor"
 baseurl = "https://example.com/"
 title = "Hugo Themes"
 paginate = 3
@@ -48,7 +51,11 @@ DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
-googleAnalytics = "UA-XXXXXXXX-XX" # Optional
+# Optional
+# If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.
+googleAnalytics = "UA-XXXXXXXX-XX"
+# and disqus too.
+disqusShortName = "yourdisqusshortname"
 
 [Author]
   name = "Hugo Author"
@@ -92,11 +99,15 @@ googleAnalytics = "UA-XXXXXXXX-XX" # Optional
   weight = 3
 
 [params.logo]
-  url = "icon.png"
+  url = "icon.png" # static/images/icon.png
   width = 50
   height = 50
   alt = "Logo"
 ```
+
+Change favicon(static/favicon.ico) and icon(static/images/icon.png)!
+
+If you don't change them, your favicon and icon are my face :)
 
 #### Search entire blog posts
 
@@ -156,7 +167,7 @@ backtotop = false
 
 1. Install Node.js and npm, the Node.js package manager.
 
-2. The package.json file in your new sub-theme contains the versions of all the Node.js software you need. 
+2. The package.json file in your new sub-theme contains the versions of all the Node.js software you need.
   To install them run:
 
         npm install
